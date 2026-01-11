@@ -16,15 +16,22 @@ try {
 const host = process.env.SERVER_IP || config.ip || "yourip.aternos.me";
 const port = process.env.SERVER_PORT || config.port || 25565;
 const username = process.env.BOT_NAME || config.name || "afk_bot";
+const version = process.env.VERSION || config.version || false;
 
 let bot;
 
 function createBot() {
-    bot = mineflayer.createBot({
+    const botOptions = {
         host: host,
         port: parseInt(port),
         username: username,
-    });
+    };
+
+    if (version) {
+        botOptions.version = version;
+    }
+
+    bot = mineflayer.createBot(botOptions);
 
     let lasttime = -1;
     let moving = 0;

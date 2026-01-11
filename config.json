@@ -1,5 +1,6 @@
 {
-	"ip":"yourip.aternos.me",
+	"ip": "yourip.aternos.me",
 	"port": "25565",
-	"name": "afk_bot"
+	"name": "afk_bot",
+	"version": "1.20.1"
 }
