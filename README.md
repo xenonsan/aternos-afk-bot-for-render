@@ -1,32 +1,29 @@
-# Afk bot for aternos
-Hi, this is a aternos bot which stays afk in your minecraft server.
-A full setup guide is a available at: https://docs.dornox.live so kindly refer to this as the setup below doesn't include hosting.
-### **Setup:**  
-First of all you need to change the ip in [config file](https://github.com/krushna06/afk-bot-for-aternos/blob/main/config.json).
-**Don't change the port**, you may change the rest of the stuff
-```
-{
-	"ip":"yourip.aternos.me",
-	"port": "25565",
-	"name": "afk bot"
-}
+# Aternos AFK Bot for Render
 
-```
-Then you need to clone this bot to [Replit](https://replit.com/~) <br>
-Then in console type ```npm install``` after doing this in console type ```node index.js``` <br>
-If everything goes correct, this is what you should see in the console
+Aternosのサーバーを24時間稼働させるためのAFKボットです。Render.comで簡単に動かせるように最適化されています。
 
+## Render.com へのデプロイ方法
 
-![image](https://user-images.githubusercontent.com/69315835/128631156-f5e257dd-4748-477c-87f1-d627c853590f.png)
+1.  このリポジトリを自分のGitHubアカウントにフォーク、またはアップロードします。
+2.  [Render.com](https://render.com/) にログインします。
+3.  **New +** ボタンから **Blueprint** を選択します。
+4.  自分のリポジトリを選択します。
+5.  環境変数の設定画面で以下の値を設定します（または `render.yaml` が自動で読み込まれます）：
+    *   `SERVER_IP`: あなたの Aternos の IP (例: `example.aternos.me`)
+    *   `SERVER_PORT`: `25565` (デフォルト)
+    *   `BOT_NAME`: ボットの名前
+6.  **Apply** をクリックしてデプロイが完了するのを待ちます。
 
-### **Important note:**
-The bot is capable of joining 1.16.5 servers only.
-If your server version is not 1.16.5 then add the following plugins:
-- Viaversion
-- Viarewind
-> Others:
-- If your server has login plugins, kindly whitelist the bot from that.
-- If your server has antibot/ddos protection, kindly whitelist the bot from that.
+## local での実行方法
+1. `npm install` を実行します。
+2. `config.json` にサーバー情報を記述します。
+3. `node index.js` で起動します。
 
-### **Extra help**
-If you are facing any issue then you can join this discord server: https://discord.gg/7AYYyjZ4B8
+### 注意事項
+- Aternosのサーバーバージョンが1.16.5以外の場合は、サーバーに `ViaVersion` などのプラグインを入れてください。
+- ボットがKickされた場合、30秒後に自動で再接続を試みます。
+- Renderの無料枠（Free Tier）では、Webサービスは一定時間アクセスがないとスリープします。これを防ぐには、[UptimeRobot](https://uptimerobot.com/) などで Render の URL (例: `https://your-app.onrender.com/`) を定期的に監視（Ping）してください。
+
+### 連絡先
+不具合があれば、元のプロジェクトのDiscordサーバーなどで確認してください。
+

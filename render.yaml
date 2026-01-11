@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: aternos-afk-bot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: SERVER_IP
+        sync: false
+        placeholder: "your_aternos_ip.aternos.me"
+      - key: SERVER_PORT
+        value: "25565"
+      - key: BOT_NAME
+        value: "afk_bot"
+      - key: NODE_VERSION
+        value: "20"
